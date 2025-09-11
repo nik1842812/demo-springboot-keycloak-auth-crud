@@ -5,8 +5,8 @@ package sn.malcolm.demo.model.enums;
  * Ces rôles doivent correspondre aux rôles configurés dans Keycloak.
  */
 public enum UserRole {
-    ADMIN("ADMIN"),
-    USER("USER");
+    ADMIN("admin"),
+    USER("user");
     private final String roleName;
 
     UserRole(String roleName) {
