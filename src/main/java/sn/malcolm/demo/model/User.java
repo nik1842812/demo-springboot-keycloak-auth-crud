@@ -2,10 +2,7 @@ package sn.malcolm.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import sn.malcolm.demo.model.enums.UserRole;
 import sn.malcolm.demo.view.UserView;
 
@@ -18,6 +15,7 @@ import java.util.Date;
 @Table(name = "user")
 @EqualsAndHashCode(callSuper = false)
 @Setter
+@Getter
 public class User extends BaseEntity implements java.io.Serializable{
     @Serial
     private static final long serialVersionUID = 1L;
