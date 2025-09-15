@@ -1,5 +1,11 @@
 # 🚀 Demo Spring Boot + Keycloak
 
+---
+
+:globe_with_meridians: [English version available — click here!](./README-EN.md)
+
+---
+
 ## 📝 Présentation
 
 Ce projet est un exemple d’application Spring Boot intégrant Keycloak pour la gestion de l’authentification, l’inscription des utilisateurs et les opérations CRUD. Il s’adresse à toute personne souhaitant sécuriser une API REST avec Keycloak.
