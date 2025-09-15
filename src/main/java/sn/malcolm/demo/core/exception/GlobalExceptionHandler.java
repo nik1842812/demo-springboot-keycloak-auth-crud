@@ -10,7 +10,7 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import sn.malcolm.demo.core.dto.ApiResponseDTO;
+import sn.malcolm.demo.core.payload.dto.ApiResponseDTO;
 
 import java.util.Arrays;
 import java.util.Map;
