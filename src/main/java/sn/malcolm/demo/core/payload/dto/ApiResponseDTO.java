@@ -1,4 +1,4 @@
-package sn.malcolm.demo.core.dto;
+package sn.malcolm.demo.core.payload.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonView;
