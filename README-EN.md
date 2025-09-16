@@ -2,7 +2,7 @@
 
 ## 📝 Overview
 
-This project is a sample Spring Boot application integrating Keycloak for authentication, user registration, and CRUD operations. It is intended for anyone looking to secure a REST API with Keycloak.
+This project is a sample Spring Boot application integrating Keycloak for authentication, user registration, sending email, and CRUD operations. It is intended for anyone looking to secure a REST API with Keycloak.
 
 ## ✨ Features
 
@@ -103,6 +103,9 @@ Here are some examples of API usage with Postman:
 ### 📝 Create a user
 <img src="postman/createUser.png" alt="Create user" width="500"/>
 
+### 📧 Send email creation
+<img src="postman/email-creation-account.png" alt="Send Email" width="500"/>
+
 ### 📋 Get all users
 <img src="postman/getAllUser.png" alt="Get All Users" width="500"/>
 
@@ -114,6 +117,15 @@ Here are some examples of API usage with Postman:
 
 ### ❌ Delete a user
 <img src="postman/deleteUser.png" alt="Delete User" width="500"/>
+
+### 🔄 Reset password (reset-password)
+
+<img src="postman/reset-password.png" alt="Reset Password" width="500"/>
+<img src="postman/mail-reset-password.png" alt="Mail Reset Password" width="500"/>
+
+### 🔒 Change password (change-password)
+
+<img src="postman/change-password.png" alt="Change Password" width="500"/>
 
 ## 📚 Useful Resources
 

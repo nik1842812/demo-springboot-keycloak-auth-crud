@@ -8,7 +8,7 @@
 
 ## 📝 Présentation
 
-Ce projet est un exemple d’application Spring Boot intégrant Keycloak pour la gestion de l’authentification, l’inscription des utilisateurs et les opérations CRUD. Il s’adresse à toute personne souhaitant sécuriser une API REST avec Keycloak.
+Ce projet est un exemple d’application Spring Boot intégrant Keycloak pour la gestion de l’authentification, l’inscription des utilisateurs, l'envoie d'email et les opérations CRUD. Il s’adresse à toute personne souhaitant sécuriser une API REST avec Keycloak.
 
 ## ✨ Fonctionnalités
 
@@ -104,22 +104,43 @@ keycloak/              # Captures d’écran de la configuration Keycloak
 Voici quelques exemples d’utilisation de l’API via Postman :
 
 ### 🔑 Authentification (Login)
+
 <img src="postman/login_and_generate_token_for_inherith_auth_from_parent.png" alt="Login et génération du token" width="500"/>
 
 ### 📝 Création d’un utilisateur
+
 <img src="postman/createUser.png" alt="Création d'utilisateur" width="500"/>
 
+### 📧 Email de création de compte
+
+<img src="postman/email-creation-account.png" alt="Email Création Compte" width="500"/>
+
 ### 📋 Récupérer tous les utilisateurs
+
 <img src="postman/getAllUser.png" alt="Get All Users" width="500"/>
 
 ### 🔍 Récupérer un utilisateur par ID
+
 <img src="postman/getUserByID.png" alt="Get User By ID" width="500"/>
 
 ### ✏️ Mise à jour d’un utilisateur
+
 <img src="postman/updateUser.png" alt="Update User" width="500"/>
 
 ### ❌ Suppression d’un utilisateur
+
 <img src="postman/deleteUser.png" alt="Delete User" width="500"/>
+
+### 🔄 Réinitialisation du mot de passe (reset-password)
+
+<img src="postman/reset-password.png" alt="Reset Password" width="500"/>
+<img src="postman/mail-reset-password.png" alt="Mail Reset Password" width="500"/>
+
+### 🔒 Changement du mot de passe (change-password)
+
+<img src="postman/change-password.png" alt="Change Password" width="500"/>
+
+
 
 ## 📚 Ressources utiles
 
