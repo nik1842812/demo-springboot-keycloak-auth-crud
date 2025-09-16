@@ -79,6 +79,25 @@ public class KeycloakService {
         }
     }
 
+    // Vérifier le mot de passe utilisateur via Keycloak
+    public boolean verifyUserPassword(String username, String password) {
+        try {
+            Keycloak keycloakAuth = KeycloakBuilder.builder()
+                    .serverUrl(serverUrl)
+                    .realm(realm)
+                    .clientId(clientId)
+                    .clientSecret(clientSecret)
+                    .grantType(OAuth2Constants.PASSWORD)
+                    .username(username)
+                    .password(password)
+                    .build();
+            keycloakAuth.tokenManager().getAccessToken();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     // Créer un nouvel utilisateur dans Keycloak
     @Transactional
     public String createUser(User user, String password) {
