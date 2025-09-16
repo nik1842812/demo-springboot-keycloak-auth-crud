@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue sur Demo Keycloak</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f6f8fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 32px 28px;
+        }
+        h2 {
+            color: #2d7ff9;
+            margin-top: 0;
+        }
+        .info {
+            background: #f0f4ff;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 18px 0;
+        }
+        .info strong {
+            color: #2d7ff9;
+        }
+        .footer {
+            margin-top: 32px;
+            color: #888;
+            font-size: 13px;
+            text-align: center;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 18px auto;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://t3.ftcdn.net/jpg/02/48/26/56/360_F_248265699_2fuBrOPoI07CRaOc9uH7Dk8Mf1cBCK14.jpg" alt="Demo Keycloak" class="logo" />
+        <h2>Bienvenue, <span th:text="${userName}"></span> !</h2>
+        <div class="info">
+            <p>Votre compte Demo Keycloak a été créé avec succès.</p>
+            <p>Identifiant : <strong th:text="${username}"></strong></p>
+            <p>Mot de passe temporaire : <strong th:text="${password}"></strong></p>
+        </div>
+        <p>Merci de vous connecter et de modifier votre mot de passe dès votre première connexion.</p>
+        <div class="footer">
+            L'équipe Demo Keycloak<br>
+            <span style="font-size:11px;">&copy; 2025 Demo Keycloak</span>
+        </div>
+    </div>
+</body>
+</html>
