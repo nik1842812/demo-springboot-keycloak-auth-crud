@@ -22,5 +22,10 @@ services:
     depends_on:
       - postgres
 
+  maildev:
+    image: maildev/maildev
+    ports:
+      - "1080:1080"   # Interface web
+      - "1025:1025"   # SMTP
 volumes:
   pgdata:
