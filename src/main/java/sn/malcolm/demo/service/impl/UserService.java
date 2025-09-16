@@ -6,8 +6,10 @@ import sn.malcolm.demo.core.exception.ApiException;
 import sn.malcolm.demo.core.helper.AppUtil;
 import sn.malcolm.demo.repository.UserRepository;
 import sn.malcolm.demo.service.KeycloakService;
+import sn.malcolm.demo.service.EmailService;
 import sn.malcolm.demo.model.User;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -15,11 +17,13 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final KeycloakService keycloakService;
+    private final EmailService emailService;
     public static final Integer DFT_PWD_LENGTH = 12;
 
-    public UserService(UserRepository userRepository, KeycloakService keycloakService) {
+    public UserService(UserRepository userRepository, KeycloakService keycloakService, EmailService emailService) {
         this.userRepository = userRepository;
         this.keycloakService = keycloakService;
+        this.emailService = emailService;
     }
 
     // Créer un utilisateur (Keycloak + base de données)
@@ -29,7 +33,16 @@ public class UserService {
         String kcId = keycloakService.createUser(user, password);
         user.setKcId(kcId);
         // 2. Sauvegarder l'utilisateur en base
-        return userRepository.save(user);
+        User savedUser = userRepository.save(user);
+        // 3. Envoyer l'e-mail de confirmation
+        Map<String, Object> variables = Map.of(
+            "userName", user.getFirstName() + " " + user.getLastName(),
+            "username", user.getUsername(),
+            "email", user.getEmail(),
+            "password", password
+        );
+        emailService.sendSignupConfirmationEmail(user.getEmail(), variables);
+        return savedUser;
     }
 
     // Mettre à jour un utilisateur
@@ -68,5 +81,32 @@ public class UserService {
     // Lister tous les utilisateurs
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    // Réinitialiser le mot de passe d'un utilisateur
+    public void resetUserPassword(Integer userId, String newPassword, String resetLink, int tokenDuration) {
+        User user = userRepository.findById(Long.valueOf(userId))
+                .orElseThrow(() -> new ApiException("Utilisateur non trouvé"));
+        keycloakService.resetPassword(user.getKcId(), newPassword);
+        // Envoi de l'e-mail de réinitialisation
+        emailService.sendPasswordResetEmail(
+            user.getEmail(),
+            user.getFirstName() + " " + user.getLastName(),
+            resetLink,
+            tokenDuration
+        );
+    }
+
+    // Changement du mot de passe par l'utilisateur (avec vérification de l'ancien mot de passe)
+    public void changeUserPassword(Integer userId, String oldPassword, String newPassword) {
+        User user = userRepository.findById(Long.valueOf(userId))
+                .orElseThrow(() -> new ApiException("Utilisateur non trouvé"));
+        // Vérifier l'ancien mot de passe via Keycloak
+        boolean isValid = keycloakService.verifyUserPassword(user.getUsername(), oldPassword);
+        if (!isValid) {
+            throw new ApiException("Ancien mot de passe incorrect");
+        }
+        // Modifier le mot de passe dans Keycloak
+        keycloakService.resetPassword(user.getKcId(), newPassword);
     }
 }

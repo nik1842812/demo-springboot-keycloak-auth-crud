@@ -81,4 +81,32 @@ public class UserController {
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
+
+    @Operation(summary = "Réinitialiser le mot de passe d'un utilisateur", description = "Réinitialise le mot de passe et envoie un e-mail de réinitialisation.")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Mot de passe réinitialisé et e-mail envoyé"),
+        @ApiResponse(responseCode = "404", description = "Utilisateur non trouvé")
+    })
+    @PostMapping("/{id}/reset-password")
+    public ResponseEntity<Void> resetUserPassword(@PathVariable Integer id,
+                                                  @RequestParam String newPassword,
+                                                  @RequestParam String resetLink,
+                                                  @RequestParam int tokenDuration) {
+        userService.resetUserPassword(id, newPassword, resetLink, tokenDuration);
+        return ResponseEntity.ok().build();
+    }
+
+    @Operation(summary = "Changer le mot de passe utilisateur", description = "Permet à l'utilisateur de changer son mot de passe en fournissant l'ancien et le nouveau.")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Mot de passe changé avec succès"),
+        @ApiResponse(responseCode = "400", description = "Ancien mot de passe incorrect ou requête invalide"),
+        @ApiResponse(responseCode = "404", description = "Utilisateur non trouvé")
+    })
+    @PostMapping("/{id}/change-password")
+    public ResponseEntity<Void> changeUserPassword(@PathVariable Integer id,
+                                                  @RequestParam String oldPassword,
+                                                  @RequestParam String newPassword) {
+        userService.changeUserPassword(id, oldPassword, newPassword);
+        return ResponseEntity.ok().build();
+    }
 }
